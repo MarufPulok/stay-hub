@@ -3,7 +3,13 @@ import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import prisma from '../libs/prismadb'
 
 export async function getSession() {
-    return await getServerSession(authOptions)
+    try {
+        return await getServerSession(authOptions)
+    } catch (error: any) {
+        // Silently handle JWT decryption errors (e.g., invalid/expired tokens, missing secret)
+        // These are expected when there's no valid session
+        return null
+    }
 }
 
 export default async function getCurrentUser() {

@@ -6,11 +6,11 @@ interface IParams {
     reservationId?: string;
 }
 
-export async function DELETE (request: Request, {params}: {params: IParams}) {
+export async function DELETE (request: Request, {params}: {params: Promise<IParams>}) {
     const currentUser = await getCurrentUser();
     if (!currentUser) return NextResponse.error();
 
-    const {reservationId} = params;
+    const {reservationId} = await params;
     if (!reservationId || typeof reservationId !== 'string') throw new Error('Invalid ID');
 
     const reservation = await prisma.reservation.deleteMany({

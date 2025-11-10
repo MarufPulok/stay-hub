@@ -6,12 +6,12 @@ interface IParams {
     listingId: string;
 }
 
-export async function DELETE(request: Request, { params }: { params: IParams }) {
+export async function DELETE(request: Request, { params }: { params: Promise<IParams> }) {
     const currentUser = await getCurrentUser()
 
     if (!currentUser) return NextResponse.error()
 
-    const { listingId } = params
+    const { listingId } = await params
     if (!listingId) throw new Error("Invalid Listing ID")
 
     const listing = await prisma.listing.deleteMany({
