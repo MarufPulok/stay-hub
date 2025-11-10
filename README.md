@@ -70,7 +70,7 @@ A modern, full-stack vacation rental platform built with Next.js 13, TypeScript,
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/stayhub.git
+   git clone https://github.com/MarufPulok/stayhub.git
    cd stayhub
    ```
 
@@ -205,9 +205,9 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 👨‍💻 Author
 
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+**Maruf Hossain**
+- GitHub: [@MarufPulok](https://github.com/MarufPulok)
+- LinkedIn: [Maruf Hossain](https://www.linkedin.com/in/marufhpulok/)
 
 ## 🙏 Acknowledgments
 
